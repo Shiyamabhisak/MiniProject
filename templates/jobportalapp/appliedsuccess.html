@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+<head>
+<title>Success !!!</title>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <link href="{%static 'img/favicon.jpg'%}" rel="icon">
+  <link rel="stylesheet" href="{%static 'css/success.css'%}">
+</head>
+<body>
+  <div class="box">
+  <div class="envelope">
+    <div class="top"></div>
+    <div class="left"></div>
+    <div class="back">
+      <div class="paper">
+        <span class="line one"></span>
+        <span class="line two"></span>
+        <span class="line three"></span>
+        <span class="line two"></span>
+        <span class="line one"></span>
+      </div>
+    </div>
+    <div class="right"></div>
+    <div class="bottom"></div>
+  </div>
+
+  <h1 class="center">SUCCESS!!!</style></h1>
+  <div class="container"><div class="typed-out">Applied Successfully....</div></div>
+  <br><br>
+  <a href="/candidate" class="get-started-btn">OK</a>
+</div>
+  <script>
+    var element=document.querySelector(".envelope")
+    const myTimeout = setTimeout(myGreeting, 1200);
+    function myGreeting() {
+      element.classList.toggle("fold");
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Profile</title>
+        <link href="{%static 'img/favicon.jpg'%}" rel="icon">
+        <link rel="stylesheet" href="{%static 'css/Registration.css'%}">
+    </head>
+    <body>
+        <form class="box" action="/edit/" method="post">
+        {% csrf_token %}
+            <h1>YOUR PROFILE</h1>
+            <input type="text" name="name" readonly value={{user.name}} placeholder={{user.name}}>
+            <input type="text" name="username" readonly value={{user.user_name}} placeholder={{user.user_name}}>
+            <input type="text" name="phoneno" readonly value={{user.phone_no}} placeholder={{user.phone_no}}>
+            <input type="text" name="mailid" readonly value={{user.mail_id}} placeholder={{user.mail_id}}>
+            <input type="text" name="password" readonly value={{user.password}} placeholder={{user.password}}>
+            <input type="submit" onclick="editFunction()" value="Edit">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Candidate Portal</title>
+        <link href="{%static 'img/favicon.jpg' %}" rel="icon">
+        <link rel="stylesheet" href="{%static 'css/UploadResume.css' %}">
+    </head>
+    <body>
+        <form class="box" action="/filematch/" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h2>UPLOAD YOUR RESUME</h2>
+            <input type="file" name="resume" id="upload"/>
+            <h4>Choose file</h4>
+            <input type="submit" value="Upload">
+        </form>
+    </body>
+</html>

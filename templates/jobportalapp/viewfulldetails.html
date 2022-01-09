@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Recruiter Portal</title>
+        <link href="{%static 'img/favicon.jpg' %}" rel="icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Eczar&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{%static 'css/viewdetails.css'%}">
+        
+    </head>
+    <body>
+        <div class="container">
+            <div class="profile-details">
+                <div class="person-details">
+                    <h1>User - Details</h1>
+                    <hr>
+                    <h3>NAME : <b>{{res.name}}</b></h3>
+                    <h3>USERNAME : <b>{{res.user_name}}</b></h3>
+                    <h3>AGE : <b>{{res.age}}</b></h3>
+                </div>
+                <hr>
+                <div class="contact-details">
+                    <h2>Contact - Details</h2>
+                    <h3>MAIL ID : <b>{{res.mail_id}}</b></h3>
+                    <h3>MOBILE : <b>{{res.phone_no}}</b></h3>
+                </div>
+            </div>
+            <div class="professional-details">
+                <div class="skill-details">
+                    <h2>professional - Details</h2>
+                    <h3>Skills : {{res.skills}}</h3>
+                    <h3>Experience : {{res.experience}}</h3>
+                    <p>Click <a href="{{obj.jobdescription.url}}">here</a> to download {{res.name}}'s Resume</p>
+                </div>
+                <div class="svg-item">
+                    <svg width="100%" height="100%" viewBox="0 0 40 40" class="donut">
+                    <circle class="donut-hole" cx="20" cy="20" r="15.91549430918954" fill="#fff"></circle>
+                    <circle class="donut-ring" cx="20" cy="20" r="15.91549430918954" fill="transparent" stroke-width="3.5"></circle>
+                    <circle class="donut-segment donut-segment-2" cx="20" cy="20" r="15.91549430918954" fill="transparent" stroke-width="3.5" stroke-dasharray="71 29" stroke-dashoffset="25"></circle>
+                    <g class="donut-text donut-text-1">
+                
+                        <text y="50%" transform="translate(0, 2)">
+                        <tspan x="50%" text-anchor="middle" class="donut-percent">{{res.matching}}%</tspan>   
+                        </text>
+                        <text y="60%" transform="translate(0, 2)">
+                        <tspan x="50%" text-anchor="middle" class="donut-data">{{res.jobcode}}</tspan>   
+                        </text>
+                    </g>
+                    </svg>
+            </div>
+        </div>
+    </body>
+    <script>
+        var x = document.getElementByClass("donut-percent").innerHTML;
+    </script>
+</html>

@@ -1,0 +1,212 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: linear-gradient(to top right,#00000080, rgba(0, 0, 0, 0.2)) , url("../img/bg_image.jpg") no-repeat;
+    background-size: cover;
+}
+.container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.profile-details{
+    width: 25%;
+    height: 100vh;
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: #49796b;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15.4px);
+    -webkit-backdrop-filter: blur(15.4px);
+    /*border: 1px solid rgba(46, 204, 113, 0.7);*/
+}
+.person-details{
+    padding: 10px;
+}
+.person-details h1{
+    font-family: 'Eczar', serif;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    line-height: 70px; 
+}
+.person-details hr{
+    color: whitesmoke;
+    background: whitesmoke;
+    height: 2px;
+}
+.person-details h3{
+    font-family: 'Eczar', serif;
+    font-size: medium;
+    text-align: start;
+    line-height: 70px;
+    font-size: larger;
+    color: #fcc200;
+    margin-left: 10px;
+}
+.person-details h3 b{
+    color: antiquewhite;
+}
+.contact-details{
+    padding: 10px;
+}
+.contact-details h2{
+    font-family: 'Eczar', serif;
+    text-transform: uppercase;
+    text-align: center;
+    color: white; 
+    line-height: 70px;
+}
+.contact-details h3{
+    font-family: 'Eczar', serif;
+    font-size: medium;
+    text-align: start;
+    line-height: 70px;
+    font-size: larger;
+    color: #ffa812;
+}
+.contact-details h3 b{
+    color: antiquewhite;
+}
+.professional-details{
+    display: inline-block;
+    width: 70%;
+    height: 100vh;
+    border-radius: 5%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: rgba(34,139,34, 0.4);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15.4px);
+    -webkit-backdrop-filter: blur(15.4px);
+    
+}
+.skill-details{
+    height: 30%;
+    padding: 20px;
+}
+.skill-details h2{
+    font-family: 'Eczar', serif;
+    color: whitesmoke;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 60px;
+}
+.skill-details h3{
+    font-family: 'Eczar', serif;
+    font-size: medium;
+    text-align: center;
+    line-height: 50px;
+    font-size: larger;
+}
+.skill-details p{
+    font-family: 'Eczar', serif;
+    font-size: medium;
+    text-align: center;
+    line-height: 50px;
+    font-size: larger;
+    font-weight: bold;
+}
+.svg-item {
+    width: 100%;
+    font-size: 16px;
+    margin: 0 auto;
+    animation: donutfade 1s;
+}
+
+@keyframes donutfade {
+  /* this applies to the whole svg item wrapper */
+    0% {
+        opacity: .2;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (min-width: 992px) {
+    .svg-item {
+        width: 30%;
+    }
+}
+
+.donut-ring {
+    stroke: #EBEBEB;
+}
+
+.donut-segment {
+    transform-origin: center;
+    stroke: #FF6200;
+}
+
+.donut-segment-2 {
+    stroke: #fcc200;
+    animation: donut1 3s;
+}
+
+.segment-1{fill:#ccc;}
+.segment-2{fill:rgb(96, 212, 28);}
+
+.donut-percent {
+    animation: donutfadelong 1s;
+}
+
+@keyframes donutfadelong {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes donut1 {
+    0% {
+        stroke-dasharray: 0, 100;
+    }
+    100% {
+        stroke-dasharray: 71, 29;
+    }
+}
+
+.donut-text {
+    font-family: Arial, Helvetica, sans-serif;
+    fill: #FF6200;
+}
+.donut-text-1 {
+    fill: #fcc200;
+}
+
+.donut-label {
+    font-size: 0.28em;
+    font-weight: 700;
+    line-height: 1;
+    fill: #000;
+    transform: translateY(0.25em);
+}
+
+.donut-percent {
+    font-size: 0.5em;
+    line-height: 1;
+    transform: translateY(0.5em);
+    font-weight: bold;
+}
+
+.donut-data {
+    font-size: 0.12em;
+    line-height: 1;
+    transform: translateY(0.5em);
+    text-align: center;
+    text-anchor: middle;
+    color:#666;
+    fill: #666;
+    animation: donutfadelong 1s;
+}
+
+
+

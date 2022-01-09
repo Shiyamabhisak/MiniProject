@@ -1,0 +1,94 @@
+body{
+    background: linear-gradient(to top right,#00000080, rgba(0, 0, 0, 0.2)) , url("../img/bg_image.jpg") no-repeat;
+      background-size: cover;
+}
+h1{
+    margin-left: 2em;
+    color: #AFE1AF;
+    font-size: 28px;
+    font-family: 'Signika', sans-serif;
+}
+h2{
+    margin-left: 2em;
+    color: #F0E68C;
+    font-size: 28px;
+    font-family: 'Signika', sans-serif;
+}
+.code-submit{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.code{
+    width: 60%;
+    height: 40px;
+    margin-top: 10px;
+    font-size: large;
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.submit-button{
+      height: 45px;
+      margin-top: 10px;
+    width: 40%;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #AFE1AF, #50C878);
+}
+
+.box-model{
+    margin: auto;
+      background: white;
+    width: 80%;
+    height: 14em;
+    border-radius: 10px;
+}
+.filter{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.filter-elements{
+    margin: 8px;
+    display: inline-block;
+    height: 45px;
+    width: 40%;
+    outline: none;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+.btnSelect{
+    height: 45px;
+    margin: 35px 25px;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #AFE1AF, #50C878);
+}
+.submit-button:hover{
+    background: linear-gradient(135deg, #50C878, #AFE1AF);
+}
+.btnSelect:hover{
+    background: linear-gradient(135deg, #50C878, #AFE1AF);
+}

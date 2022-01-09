@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Recruiter Portal</title>
+        <link href="{%static 'img/favicon.jpg' %}" rel="icon">
+        <link rel="stylesheet" href="{% static 'css/candidate.css' %}">
+        <style>
+            .btnSelect {
+                height: 40px;
+                font-weight: bold;
+                font-size: 12px;
+                text-shadow: none;
+                min-width: 100px;
+                border-radius: 50px;
+                line-height: 13px;
+                color:white;
+                background-color: rgb(31, 158, 31);
+              }
+        </style>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="table-wrapper">
+                <div class="table-title">
+                    <div class="row">
+                        <div class="col-sm-8"><h2>Applied <b>Candidates</b></h2></div>
+                    </div>
+                </div>
+                <table class="table table-hover">
+                    <thead>
+                        <tr style="height:40px;">
+                            <th>Name</th>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Mobile</th>
+                            <th>Applied for</th>
+                            <th>View details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for obj in res %}  
+                    <tr>
+                        <td>{{obj.name}}</td>
+                        <td>{{obj.user_name}}</td>
+                        <td>{{obj.mail_id}}</td>
+                        <td>{{obj.phone_no}}</td>
+                        <td>{{obj.jobcode}}</td>
+                        <td>
+                            <form action = "/viewdetailedprofile/" method="post">
+                                {% csrf_token %}
+                                <input type="text" value="{{obj.jobcode}}" name="jobcode" style="display:none;">
+                                <input type="text" value="{{obj.user_name}}" name="username" style="display:none;">
+                                <input class="btnSelect" type="submit" value="View">
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

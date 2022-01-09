@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Recruiter Portal</title>
+        <link href="{%static 'img/favicon.jpg' %}" rel="icon">
+        <link rel="stylesheet" href="{% static 'css/candidate.css' %}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <style>
+            .btnSelect {
+                height: 40px;
+                font-weight: bold;
+                font-size: 12px;
+                text-shadow: none;
+                min-width: 100px;
+                border-radius: 50px;
+                line-height: 13px;
+                color:white;
+                background-color: rgb(31, 158, 31);
+              }
+        </style>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="table-wrapper">
+                <div class="table-title">
+                    <div class="row">
+                        <div class="col-sm-8"><h2>Job <b>Details</b></h2></div>
+                    </div>
+                </div>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Job Code</th>
+                            <th>Company Name</th>
+                            <th>Job Role</th>
+                            <th>Date posted</th>
+                            <th>Ending Date</th>
+                            <th>Apply HERE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for obj in res %}  
+                    <tr>
+                        <td>{{obj.jobcode}}</td>
+                        <td>{{obj.companyname}}</td>
+                        <td>{{obj.jobrole}}</td>
+                        <td>{{obj.dateposted}}</td>
+                        <td>{{obj.endingdate}}</td>
+                        <td>
+                            <form action = "/candiddetails/" method="post">
+                                {% csrf_token %}
+                                <input type="text" value="{{obj.jobcode}}" name="jobcode" style="display:none;">
+                                <input class="btnSelect" data-toggle="modal" data-target="#myModal" type="submit" value="Apply">
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- Modal 
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+        
+         Modal content
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Fill <b>JOB</b> Details</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <form action= "/uploadresume/" method="post" enctype="multipart/form-data">
+                  {% csrf_token %}
+                  <label>Name :</label>&nbsp;&nbsp;&nbsp;<input type="text" name="companyname"><br><br>
+                  <label>Username : </label>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="jobrole"><br><br>
+                  <label>Phone No : </label>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="endingdate"><br><br>
+                  <label>Mail ID : </label>&nbsp;&nbsp;&nbsp;<input type="text" name="file"><br><br>
+                  <label>Age : </label>&nbsp;&nbsp;&nbsp;<input type="text" name="age"><br><br>
+                  <label>DOB : </label>&nbsp;&nbsp;&nbsp;<input type="date" name="dob"><br><br>
+                  <label>Skills : </label>&nbsp;&nbsp;&nbsp;<input type="text" name="skills"><br><br>
+                  <label>Experience : </label>&nbsp;&nbsp;&nbsp;<input type="text" name="exp"><br><br>
+                  <input type="submit" value="Submit" class="btn btn-success"><br><br>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>-->
+    </body>
+</html>

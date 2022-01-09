@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registration</title>
+        <link href="{%static 'img/favicon.jpg'%}" rel="icon">
+        <link rel="stylesheet" href="{%static 'css/Registration.css'%}">
+    </head>
+    <body>
+        <form class="box" action="/register/" method="post">
+        {% csrf_token %}
+            <h1>REGISTRATION</h1>
+            <input type="text" name="name" placeholder="Full name">
+            <input type="text" name="username" placeholder="Username">
+            <input type="text" name="phoneno" placeholder="Phone No">
+            <input type="text" name="mailid" placeholder="Mail ID">
+            <input type="password" name="password" placeholder="Password">
+            <input type="password" name="password2" placeholder="Confirm Password">
+            <input type="submit" onclick="myFunction()" value="Register">
+            <input type="button" value="Cancel">
+        </form>
+        <div>
+            {% for message in messages %}
+                <h4 id = 'abc'>{{message}}</h4>
+            {% endfor %}
+        </div>
+    </body>
+</html>

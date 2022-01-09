@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Recruiter Portal</title>
+        <link href="{%static 'img/favicon.jpg' %}" rel="icon">
+        <link rel="stylesheet" href="{% static 'css/candidateform.css' %}">
+    </head>
+    <body>
+        <div class="container">
+            <div class="title">PLEASE fill these details</div>
+            <div class="content">
+              <form action="/filematch/" method="post"  enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="user-details">
+                     <div class="input-box">
+                        <span class="details">Age</span>
+                        <input type="number" name="age" min="21" max="45">
+                       </div>
+                    <div class="input-box">
+                     <span class="details">Skills</span>
+                     <input type="text" name="skills">
+                     </div>
+                       <div class="input-box">
+                     <span class="details">Experience</span>
+                     <input type="number" name="exp" min="0" max="10">
+                    </div>
+                    <div>
+                        <br>
+                    <span class="details">Upload Resume</span>
+                    <input type="file" name="resume">
+                        <br>
+                    </div>
+                  <div class="button">
+                  <input type="submit" value=" Apply ">
+                  </div>
+             </div>
+              </form>
+            </div>
+          </div>
+    </body>
+</html>
